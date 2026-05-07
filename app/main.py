@@ -15,3 +15,7 @@ app = FastAPI(title=settings.APP_NAME)
 
 app.include_router(expense_routes.router)
 app.include_router(auth.router, prefix="/auth", tags=["Auth"])
+
+@app.get("/")
+def health():
+    return {"status": "healthy"}
