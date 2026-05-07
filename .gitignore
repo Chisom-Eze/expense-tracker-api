@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Docker
+*.log
+
+# VSCode
+.vscode/
+
+# Mac/Linux
+.DS_Store
+
+# Secrets
+secrets.tfvars
+terraform.tfvars
