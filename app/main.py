@@ -18,4 +18,4 @@ app.include_router(auth.router, prefix="/auth", tags=["Auth"])
 
 @app.get("/")
 def health():
-    return {"status": "healthy"}
+    return {"status": "healthy-v1"}
