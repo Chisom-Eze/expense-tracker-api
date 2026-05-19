@@ -8,7 +8,7 @@ on:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: expense-tracker-dev
-  ECS_SERVICE: expense-dev-service
+  ECS_SERVICE: expense-tracker-dev-service
   ECS_CLUSTER: expense-tracker-dev-cluster
   ECS_TASK_DEFINITION: expense-tracker-dev-task
   CONTAINER_NAME: expense-container
