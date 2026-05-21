@@ -95,15 +95,6 @@ module "monitoring" {
   service_name  = module.ecs.service_name
 }
 
-module "backend" {
-  source = "../../modules/backend"
-
-  bucket_name     = "expense-tracker-tf-state-${var.aws_region}"
-  lock_table_name = "expense-tracker-tf-locks"
-
-  tags            = local.common_tags
-}
-
 module "acm" {
   source = "../../modules/acm"
 
