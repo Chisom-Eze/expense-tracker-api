@@ -1,33 +1,37 @@
 resource "aws_route53_zone" "main" {
-    name = var.domain_name
-}
+  name         = "${var.domain_name}"
 
-
-resource "aws_route53_record" "cert_validattion" {
-   for_each = {
-      for dvo in var.domain_validation_options :
-      dvo.domain_name => {
-         name = dvo.resource_record_name
-         type = dvo.resource_record_type
-         records = dvo.resource_record_value
-      }
-   }
-   zone_id = aws_route53_zone.main.zone_id
-
-   name = each.value.name
-   type = each.value.type
-   ttl = 60
-   records = [each.value.records]
+  tags = var.tags
 }
 
 resource "aws_acm_certificate_validation" "api_cert_validation" {
-   certificate_arn = var.certificate_arn
+  certificate_arn = var.certificate_arn
 
-   validation_record_fqdns = [
-      for record in aws_route53_record.cert_validattion :
-      record.fqdn
-   ]
- 
+  validation_record_fqdns = [
+    for record in aws_route53_record.cert_validation :
+    record.fqdn
+  ]
+}
+
+resource "aws_route53_record" "cert_validation" {
+  for_each = {
+    for dvo in var.domain_validation_options :
+    dvo.resource_record_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }...
+  }
+
+  allow_overwrite = true
+
+  zone_id = aws_route53_zone.main.zone_id
+
+  name    = each.value[0].name
+  type    = each.value[0].type
+  ttl     = 60
+
+  records = [each.value[0].record]
 }
 
 resource "aws_route53_record" "api_alias" {

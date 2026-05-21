@@ -19,8 +19,7 @@ module "alb" {
   name_prefix = local.name_prefix
   vpc_id      = module.networking.vpc_id
   subnet_ids  = module.networking.subnet_ids
-  certificate_arn = module.acm.certificate_arn
-
+  certificate_arn = module.dns.validated_certificate_arn
   tags = local.common_tags
 }
 
@@ -58,7 +57,6 @@ module "ecs" {
   alb_security_group_id = module.alb.security_group_id
 
   container_image = var.container_image
-  ecr_repository_url = module.ecr.repository_url
 
   execution_role_arn = module.iam.execution_role_arn
   task_role_arn      = module.iam.task_role_arn

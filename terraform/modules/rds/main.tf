@@ -36,8 +36,12 @@ resource "aws_db_instance" "postgres" {
 
   instance_class          = "db.t3.micro"
   
-  storage_type            = "gp2"
+  storage_type            = "gp3"
   allocated_storage       = 20
+  
+  multi_az                = false
+  deletion_protection     = false
+  backup_retention_period = 0
 
   username                = var.db_username
   password                = var.db_password

@@ -27,7 +27,7 @@ task_role_arn          = var.task_role_arn
  container_definitions = jsonencode([
   {
     name  = "expense-container"
-    image = "${var.ecr_repository_url}:bootstrap"
+    image = var.container_image
 
     essential = true
 
@@ -87,18 +87,19 @@ resource "aws_security_group" "ecs_sg" {
   tags = var.tags
 }
 
-resource "aws_ecs_service" "app"{
-name            = "${var.name_prefix}-service"
-cluster         = aws_ecs_cluster.main.id
-task_definition = aws_ecs_task_definition.app.arn
+resource "aws_ecs_service" "app" {
+  name            = "${var.name_prefix}-service"
+  cluster         = aws_ecs_cluster.main.id
+  task_definition = aws_ecs_task_definition.app.arn
 
-launch_type    = "FARGATE"
+  launch_type  = "FARGATE"
+  desired_count = 1
 
-desired_count   = 1
+  health_check_grace_period_seconds = 120
 
-network_configuration {
-    subnets = var.subnet_ids
-    security_groups = [var.alb_security_group_id]
+  network_configuration {
+    subnets          = var.subnet_ids
+    security_groups  = [aws_security_group.ecs_sg.id]
     assign_public_ip = true
   }
 
@@ -108,10 +109,5 @@ network_configuration {
     container_port   = 8000
   }
 
-depends_on = [
-  aws_ecs_task_definition.app
-]
-
- tags = var.tags
+  tags = var.tags
 }
-

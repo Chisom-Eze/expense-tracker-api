@@ -46,7 +46,3 @@ variable "secret_key_secret_arn" {
 variable "tags" {
   type        = map(string)
 }
-
-variable "ecr_repository_url" {
-  type        = string
-}
