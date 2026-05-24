@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  paths:
+    - 'app/**'
+    -'terraform/**'
+    -'.github/workflows/deploy.yml'    
 
 env:
   AWS_REGION: us-east-1
