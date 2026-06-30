@@ -189,9 +189,7 @@ Shows ECS service status, running tasks, deployment health, and service stabiliz
 <p align="center">
   <img src="screenshots/ECS-running.png" width="800">
 </p>
-```text
-screenshots/ecs-service.png
-```
+
 
 ---
 
@@ -200,20 +198,16 @@ Shows healthy registered ECS targets behind the Application Load Balancer.
 <p align="center">
   <img src="screenshots/target-group.png" width="800">
 </p>
-```text
-screenshots/alb-target-health.png
-```
+
 
 ---
 
 ### GitHub Actions CI/CD Pipeline
 Shows successful immutable deployment pipeline execution.
 <p align="center">
-  <img src="screenshots/Github-Actions.png" width="800">
+  <img src="screenshots/Github-Action.png" width="800">
 </p>
-```text
-screenshots/github-actions-success.png
-```
+
 
 ---
 
@@ -222,20 +216,16 @@ Shows successful infrastructure provisioning via Terraform.
 <p align="center">
   <img src="screenshots/terraform-apply.png" width="800">
 </p>
-```text
-screenshots/terraform-apply.png
-```
+
 
 ---
 
 ### CloudWatch Logs
 Shows centralized ECS container logging and runtime observability.
 <p align="center">
-  <img src="screenshots/ECS-task-Logs.png" width="800">
+  <img src="screenshots/Cloudwatch.png" width="800">
 </p>
-```text
-screenshots/cloudwatch-logs.png
-```
+
 
 ---
 
@@ -245,9 +235,15 @@ Shows HTTPS domain validation and DNS integration.
 <p align="center">
   <img src="screenshots/ACM.png" width="800">
 </p>
-```text
-screenshots/route53-acm.png
-```
+
+
+---
+### Swagger Page
+Shows HTTPS chisomeze.online/docs page on browser  
+<p align="center">
+  <img src="screenshots/Swagger-https.png" width="800">
+</p>
+
 
 # Operational Concepts Practiced
 
