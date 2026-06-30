@@ -44,7 +44,9 @@ FastAPI Container
    ▼
 Amazon RDS PostgreSQL
 ```
-
+<p align="center">
+  <img src="screenshots/architecture.png" width="800">
+</p>
 ---
 
 # AWS Services Used
@@ -184,25 +186,20 @@ ECS Rolling Deployment
 
 ### ECS Service Deployment
 Shows ECS service status, running tasks, deployment health, and service stabilization.
-
+<p align="center">
+  <img src="screenshots/ECS-running.png" width="800">
+</p>
 ```text
 screenshots/ecs-service.png
 ```
 
 ---
 
-### ECS Running Task
-Shows active Fargate task revision and runtime state.
-
-```text
-screenshots/ecs-running-task.png
-```
-
----
-
 ### ALB Target Group Health
 Shows healthy registered ECS targets behind the Application Load Balancer.
-
+<p align="center">
+  <img src="screenshots/target-group.png" width="800">
+</p>
 ```text
 screenshots/alb-target-health.png
 ```
@@ -211,7 +208,9 @@ screenshots/alb-target-health.png
 
 ### GitHub Actions CI/CD Pipeline
 Shows successful immutable deployment pipeline execution.
-
+<p align="center">
+  <img src="screenshots/Github-Actions.png" width="800">
+</p>
 ```text
 screenshots/github-actions-success.png
 ```
@@ -220,7 +219,9 @@ screenshots/github-actions-success.png
 
 ### Terraform Apply
 Shows successful infrastructure provisioning via Terraform.
-
+<p align="center">
+  <img src="screenshots/terraform-apply.png" width="800">
+</p>
 ```text
 screenshots/terraform-apply.png
 ```
@@ -229,7 +230,9 @@ screenshots/terraform-apply.png
 
 ### CloudWatch Logs
 Shows centralized ECS container logging and runtime observability.
-
+<p align="center">
+  <img src="screenshots/ECS-task-Logs.png" width="800">
+</p>
 ```text
 screenshots/cloudwatch-logs.png
 ```
@@ -239,7 +242,9 @@ screenshots/cloudwatch-logs.png
 
 ### Route53 DNS & ACM Validation
 Shows HTTPS domain validation and DNS integration.
-
+<p align="center">
+  <img src="screenshots/ACM.png" width="800">
+</p>
 ```text
 screenshots/route53-acm.png
 ```
