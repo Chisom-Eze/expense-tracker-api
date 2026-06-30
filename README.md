@@ -223,7 +223,7 @@ Shows successful infrastructure provisioning via Terraform.
 ### CloudWatch Logs
 Shows centralized ECS container logging and runtime observability.
 <p align="center">
-  <img src="screenshots/Cloudwatch.png" width="800">
+  <img src="screenshots/Cloudwach.png" width="800">
 </p>
 
 
